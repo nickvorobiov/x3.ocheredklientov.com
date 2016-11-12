@@ -34,7 +34,7 @@ permalink: /
     <p class="lead">получи готовый план действий по&nbsp;увеличению продаж на&nbsp;бесплатном вебинаре Николая&nbsp;Воробьёва</p>
     <h1 class="b-head__title">Как масштабировать бизнес в&nbsp;3&nbsp;раза</h1>
     <h2>{{ page.eventdate }}</h2>
-    <a href="#join" class="btn btn-default m-t b-head__button">Регистрируйся сейчас</a>
+    <a href="#join" class="btn btn-default m-t b-head__button js-scr">Регистрируйся сейчас</a>
   </div>
 </div>
 
@@ -181,21 +181,21 @@ permalink: /
               <div class="help-block with-errors"></div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[5]" class="radio-occupation" value="Работаю по найму">
+                  <input required="required" type="radio" name="field[5]" data-field="occupation" value="Работаю по найму">
                   <span class="custom-control-indicator"></span>
                   Работаю по найму, хочу запустить бизнес
                 </label>
               </div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[5]" class="radio-occupation" value="Работаю на себя">
+                  <input required="required" type="radio" name="field[5]" data-field="occupation" value="Работаю на себя">
                   <span class="custom-control-indicator"></span>
                   Работаю на себя, хочу больше заказов
                 </label>
               </div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[5]" class="radio-occupation" value="Есть работающий бизнес">
+                  <input required="required" type="radio" name="field[5]" data-field="occupation" value="Есть работающий бизнес">
                   <span class="custom-control-indicator"></span>
                   Есть работающий бизнес, хочу больше прибыли
                 </label>
@@ -206,35 +206,35 @@ permalink: /
               <div class="help-block with-errors"></div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[6]" class="radio-income" value="0-40">
+                  <input required="required" type="radio" name="field[6]" data-field="income" value="0-40">
                   <span class="custom-control-indicator"></span>
                   до 40 000 рублей в месяц
                 </label>
               </div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[6]" class="radio-income" value="40-70">
+                  <input required="required" type="radio" name="field[6]" data-field="income" value="40-70">
                   <span class="custom-control-indicator"></span>
                   от 40 000 до 70 000 рублей в месяц
                 </label>
               </div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[6]" class="radio-income" value="70-100">
+                  <input required="required" type="radio" name="field[6]" data-field="income" value="70-100">
                   <span class="custom-control-indicator"></span>
                   от 70 000 до 100 000 рублей в месяц
                 </label>
               </div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[6]" class="radio-income" value="100-300">
+                  <input required="required" type="radio" name="field[6]" data-field="income" value="100-300">
                   <span class="custom-control-indicator"></span>
                   от 100 000 до 300 000 рублей в месяц
                 </label>
               </div>
               <div class="radio custom-control custom-radio">
                 <label>
-                  <input required="required" type="radio" name="field[6]" class="radio-income" value="300plus">
+                  <input required="required" type="radio" name="field[6]" data-field="income" value="300plus">
                   <span class="custom-control-indicator"></span>
                   от 300 000 рублей в месяц
                 </label>
@@ -286,13 +286,15 @@ permalink: /
 <script type="text/javascript">
 $(document).ready(function() {
   $('input[type=radio]').change(function() {
-    var occupation = $('.radio-occupation:checked').val();
-    var income = $('.radio-income:checked').val();
+    var occupation = $('input[data-field=occupation]:checked').val();
+    var income = $('input[data-field=income]:checked').val();
 
     if (occupation == 'Работаю по найму' || income == '0-40') {
-      $('input[name=trello-list-id]').val('58275f942ec79c43fc0a44ce');
+      $('input[data-field=trello-list-id]').val('58275f942ec79c43fc0a44ce');
+      console.log('Нецелевой');
     } else {
-      $('input[name=trello-list-id]').val('58275f9bae9f6fae3c283dc8');
+      $('input[data-field=trello-list-id]').val('58275f9bae9f6fae3c283dc8');
+      console.log('Целевой');
     }
   });
 });
