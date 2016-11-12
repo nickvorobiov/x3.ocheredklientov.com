@@ -1,0 +1,418 @@
+---
+layout: base
+---
+
+<div class="b-head">
+  <nav class="navbar m-b-0">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-com">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <h4 class="m-y-0">Николай Воробьёв</h4>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-collapse-com">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="js-scr" href="#who">Кто тренер</a></li>
+          <li><a class="js-scr" href="#join-anchor">Записаться</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container p-x-lg p-y-lg">
+    <h4><b>с 19 ноября по 18 декабря, онлайн</b></h4>
+
+    <h1>Бизнес <small><span class="icon icon-heart text-muted"></span></small> по&nbsp;любви</h1>
+
+    <h2>Авторский онлайн-курс Николая Воробьёва, на&nbsp;котором ты&nbsp;выберешь вдохновляющее дело и&nbsp;сделаешь из&nbsp;него прибыльный бизнес</h2>
+
+    <h1>Начало занятий 19&nbsp;ноября 2016 в 20:00 мск</h1>
+
+    <p class="lead m-b-md">Занимайся тем, что любишь и что тебя радует, <b>и&nbsp;зарабатывай на&nbsp;этом</b></p>
+
+    <ul>
+      <li>1 вводный и 19 видео-уроков, разбитые по темам</li>
+      <li>19 заданий на выбор любимого дела и запуск бизнеса</li>
+      <li>5 живых практических занятий</li>
+      <li>База знаний с полезными материалами</li>
+      <li>Доступ к сообществу участников</li>
+    </ul>
+
+    <p class="m-t-md"><a href="#join-anchor" class="btn btn-primary btn-lg js-scr">Попасть на открытый урок бесплатно</a></p>
+  </div>
+</div>
+
+<div class="block block-bordered block-inverse">
+  <div class="container">
+    <h1 class="text-center">Работаешь на нелюбимой работе, но не хватает опыта, знаний, смелости или времени чтобы открыть бизнес?</h1>
+  </div>
+</div>
+
+<div class="block block-bordered">
+  <div class="container p-x-lg">
+    <h1 class="m-b-lg text-center">Давай говорить честно</h1>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p class="lead">Неважно, где ты работаешь — если ты работаешь по&nbsp;найму, ты на&nbsp;99% сталкивался с&nbsp;этими ситуациями</p>
+        <p>1. На работе тебе дальше некуда расти, а&nbsp;повышение ещё не&nbsp;скоро</p>
+        <p>2. Ты&nbsp;не&nbsp;видишь перспектив в&nbsp;своей работе</p>
+        <p>3. Ты&nbsp;знаешь, что тебе нравится делать, но на&nbsp;текущей работе этого не&nbsp;делаешь</p>
+        <p>4. Текущие задачи не&nbsp;приносят тебе удовлетворения</p>
+        <p>5. Если ты&nbsp;займёшься тем, что нравится, то сильно упадёшь в&nbsp;доходах</p>
+        <p>6. У тебя недостаточно опыта, чтобы открыть бизнес и заняться тем, что нравится</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered b-odd">
+  <div class="container p-x-lg">
+    <h1 class="text-center">Пока ты собираешься с силами начать жить полной жизнью, время идёт</h1>
+
+    <p class="text-center m-b-lg" id="age-timer"><span id="age-timer__number">25</span> <span id="age-timer__text">лет</span></p>
+
+    <p class="lead"><b>Плохая новость</b> заключается в том, что если ничего не делать — станет только хуже. В тебе копится неудовлетворенность своей работой, а время уходит.</p>
+
+    <p class="lead"><b>Хорошая новость</b> заключается в том, что люди, у которых не было до этого никакого опыта в бизнесе, тоже открывают бизнесы.</p>
+    <p class="m-y-lg"><a href="#join-anchor" class="btn btn-primary btn-lg js-scr">Выбрать любимое дело и открыть бизнес</a></p>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+  var oTop = $('#age-timer').offset().top - window.innerHeight;
+  $(window).scroll(function(){
+    var pTop = $('body').scrollTop();
+    if( pTop > oTop ){
+      start_count();
+    }
+  });
+});
+
+var count_started = false;
+
+function start_count(){
+  if (!count_started) {
+    count_started = true;
+    var maxage = 60;
+    setInterval(function(){
+      var age = parseInt($('#age-timer__number').text());
+      age = age + 1;
+      if (age >= maxage) age = 25;
+
+      switch (age % 10) {
+        case 1:
+          text = 'год';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          text = 'года';
+          break;
+        default: 
+          text = 'лет';
+      }
+
+      color = '#000';
+      var rest = (maxage - age);
+      if (rest < 16) {
+        var c = (15 - rest).toString(16);
+        color = '#'+c+c+c;
+      }
+
+      $('#age-timer').css({'color': color});
+      $('#age-timer__number').text(age);
+      $('#age-timer__text').text(text);
+    }, 1000);
+  }
+}
+</script>
+
+<div class="block block-bordered block-inverse">
+  <div class="container text-center">
+    <h1>Хватит терпеть</h1>
+    <p class="lead">Дай себе хотя бы шанс начать делать то, что любишь, и получать за это высокую прибыль</p>
+    <p>Вернуться к нелюбимой работе ты всегда успеешь</p>
+  </div>
+</div>
+
+<div class="block block-bordered">
+  <div class="container">
+    <h1>«Бизнес по любви» — это системная работа над собой и&nbsp;своим будущим бизнесом в&nbsp;течение 1&nbsp;месяца</h1>
+
+    <p class="lead m-b-lg">Каждую неделю ты будешь работать над одной из&nbsp;сфер, которая позволит обрести силы, видение и&nbsp;четкий план действий по старту любимого бизнеса.</p>
+
+    <div class="row">
+      <div class="col-md-3 m-b-lg">
+        <h2 class="text-muted">Неделя 1</h2>
+        <h3>Понимание себя</h3>
+
+        <div class="week">
+          <p>1. Карта желаний</p>
+          <p>2. Карта возможностей</p>
+          <p>3. Карта интересов</p>
+          <p>4. Карта смысла</p>
+          <p>5. Скрытые желания и скрытые смыслы</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 m-b-lg">
+
+        <h2 class="text-muted">Неделя 2</h2>
+        <h3>100 интересных целей</h3>
+
+        <div class="week">
+          <p>6. Ценности и важность</p>
+          <p>7. Поиск пересечений</p>
+          <p>8. Черновые цели</p>
+          <p>9. Альтернативные способы реализации</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 m-b-lg">
+
+        <h2 class="text-muted">Неделя 3</h2>
+        <h3>Вдохновляющая цель</h3>
+
+        <div class="week">
+          <p>10. Критика и подводные камни</p>
+          <p>11. Устранение сомнений</p>
+          <p>12. Конкретизация цели</p>
+          <p>13. Подъём ставок и подогрев интереса</p>
+          <p>14. Визуализация цели</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 m-b-lg">
+
+        <h2 class="text-muted">Неделя 4</h2>
+        <h3>Первый заказ</h3>
+
+        <div class="week">
+          <p>15. Анализ рынка</p>
+          <p>16. Портрет целевой аудитории</p>
+          <p>17. Прокачка экспертности</p>
+          <p>18. Первичная монетизация</p>
+          <p>19. План развития бизнеса</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center m-b-md">В результате ты</h1>
+
+        <ul>
+          <li>получишь четкое понимание себя </li>
+          <li>осознаешь свои желания и возможности</li>
+          <li>детально проработаешь личностные цели и способы их реализации</li>
+          <li>найдешь вдохновение и прилив сил</li>
+          <li>отработаешь сомнения и сдерживающие тебя установки</li>
+          <li>получишь только необходимые на практике знания для старта бизнеса</li>
+          <li>создашь конкретный план действий</li>
+        </ul>
+
+        <p class="text-center m-t-lg"><a href="#join-anchor" class="js-scr btn btn-primary btn-lg">Попасть на бесплатный открытый урок</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered">
+  <div class="container">
+    <h1 class="text-center">Первый урок — бесплатно</h1>
+    <p class="lead text-center"><a href="#" id="pricing__show">А что дальше? Давай поговорим о ценах</a></p>
+    <div class="row pricing">
+      <div class="col-md-6">
+        <h2>Решай сейчас — плати потом</h2>
+        <p>Я предлагаю, тебе честную оплату. Если хочешь, плати за каждую неделю отдельно. Что-то не понравится — всегда есть шанс пойти своей дорогой.</p>
+
+        <table class="table table-bordered pricing__table">
+          <tr>
+            <td>Неделя 1</td>
+            <td>Неделя 2</td>
+            <td>Неделя 3</td>
+            <td>Неделя 4</td>
+          </tr>
+          <tr>
+            <td>8000р</td>
+            <td>8000р</td>
+            <td>8000р</td>
+            <td>8000р</td>
+          </tr>
+        </table>
+
+        <h3>Или</h3>
+
+        <p>Получи специальную цену за верность своим решениям и оплату всего курса наперед</p>
+        <table class="table table-bordered pricing__table">
+          <tr>
+            <td>
+              25 000р за всё
+              <br/><span class="text-muted">экономия 7000р</span>
+            </td>
+          </tr>
+        </table>
+
+        <p>Не знаешь что выбрать?</p>
+        <h3>Отложи решение до открытого занятия</h3>
+
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+        <h2>Что входит в курс?</h2>
+        <p>
+          Доступ к 19 видео-урокам;
+          <br/>Доступ к 5 живым онлайн-урокам;
+          <br/>Доступ к 100% заданий;
+          <br/>Доступ ко всей базе знаний с материалами;
+          <br/>Доступ к сообществу участников;
+        </p>
+
+        <p><b>Бонусы!</b></p>
+
+        <p>
+          Запись 50 уроков по прокачке личных качеств, которые необходимы предпринимателю;
+          <br/>Бесплатный доступ на полгода в закрытый клуб личностного роста.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+  $('#pricing__show').click(function(e){
+    $('#pricing__show').hide();
+    $('.pricing').slideDown();
+    e.preventDefault();
+  })
+})
+</script>
+
+<div class="block block-bordered" id="join">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" id="join-anchor">
+        <h1>Записывайся</h1>
+
+        <p>Заполни форму ниже, чтобы получить доступ к открытому уроку 19 ноября</p>
+
+        <div class="well m-t-lg" id="form">
+          <p class="lead">Получить доступ к онлайн-уроку «Бизнес ❤️ по любви»</p>
+          <form method="post" action="https://nickvorobiov.activehosted.com/proc.php" data-toggle="validator">
+            <input type="hidden" name="u" value="11" />
+            <input type="hidden" name="f" value="11" />
+            <input type="hidden" name="s" />
+            <input type="hidden" name="c" value="0" />
+            <input type="hidden" name="m" value="0" />
+            <input type="hidden" name="act" value="sub" />
+            <input type="hidden" name="v" value="2" />
+
+            <input type="hidden" name="field[1]" data-field="roistat" value="" />
+            <input type="hidden" name="field[2]" data-field="traffic_source" value="" />
+            <input type="hidden" name="field[3]" data-field="trello-list-id" value="58219e881dad289f2ad8b6a9" />
+            <input type="hidden" name="field[4]" data-field="referer" value="" />
+
+            <div class="form-group">
+              <label for="input-name" class="control-label">Имя Фамилия</label>
+              <input id="input-name" required="required" name="fullname" type="text" class="form-control" placeholder="Иван Иванов">
+            </div>
+            <div class="form-group">
+              <label for="input-phone" class="control-label">Телефон</label>
+              <input id="input-phone" required="required" name="phone" type="text" class="form-control" placeholder="+7 (921) 765-43-21">
+            </div>
+            <div class="form-group">
+              <label for="input-email" class="control-label">Электронная почта</label>
+              <input id="input-email" required="required" name="email" type="text" class="form-control" placeholder="ivan@ivanov.com">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block b-join__button">Получить доступ к открытому уроку</button>
+          </form>
+        </div>
+        <p>
+          <span class="icon icon-mail"></span> Заполнение формы означает согласие на получение емейл-рассылки, и согласие обработку персональных данных в соответствии с законодательством Российской Федерации. <a href="http://soedinennost.com/privacy">Политика конфиденциальности</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block b-me" id="who">
+  <div class="container">
+    <span class="b-me__sign">Николай Воробьёв</span>
+    <div class="row">
+      <div class="col-sm-7">
+        <h1>Мы пока не знакомы? Давай познакомимся</h1>
+
+        <p class="lead">Меня зовут Николай Воробьёв и&nbsp;я&nbsp;уже 15&nbsp;лет занимаюсь бизнесом</p>
+
+        <p>Моя сильная сторона&nbsp;— быстрый запуск. Я&nbsp;могу помочь превратить идею в&nbsp;твоей голове в&nbsp;бизнес, который принесёт тебе первые продажи за пару недель, а&nbsp;к&nbsp;концу второго месяца уже начнём масштабироваться.</p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3 class="text-muted">Добился как бизнесмен</h3>
+            <ul class="iconlist">
+              <li><span class="icon icon-check"></span> 15&nbsp;лет в&nbsp;бизнесе</li>
+              <li><span class="icon icon-check"></span> Продал программное обеспечение каждой четвёртой поликлинике Москвы</li>
+              <li><span class="icon icon-check"></span> Сотрудничал с правительством Лен.области, Бурятии и&nbsp;Адыгеи по&nbsp;автоматизации бюджетного процесса</li>
+              <li><span class="icon icon-check"></span> Построил международную тренинговую компанию с&nbsp;филиалами в&nbsp;СПб, Мск, Киеве, Праге, Дортмунде, Краснодаре, Новосибе, Омске, Томске, Кемерово, Алма-Ате, Перми</li>
+              <li><span class="icon icon-check"></span> Собрал мастер-класс в&nbsp;Перми на&nbsp;1012 человек</li>
+              <li><span class="icon icon-check"></span> 61&nbsp;050 человек в&nbsp;базе контактов</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h3 class="text-muted">Добился как тренер</h3>
+            <ul class="iconlist">
+              <li><span class="icon icon-check"></span> 14 лет в&nbsp;тренерстве</li>
+              <li><span class="icon icon-check"></span> Обучил 14&nbsp;986 человек </li>
+              <li><span class="icon icon-check"></span> Выпустил 3&nbsp;книги </li>
+              <li><span class="icon icon-check"></span> Выступал на 1, 5 канале и&nbsp;ТНТ в&nbsp;России, 1+1, ТЕТ и&nbsp;СТБ Украины, RadioMETRO Санкт-Петербурга</li>
+              <li><span class="icon icon-check"></span> Снял 2 сезона реалити-подкаста про достижение людьми своих целей в&nbsp;бизнесе</li>
+              <li><span class="icon icon-check"></span> Провёл тренинги в&nbsp;24 городах 8 стран</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered">
+  <div class="container">
+    <h1 class="m-b-lg">В результате ты станешь свободным</h1>
+
+    <p>Подумай, что ты хочешь. <b>90% твоих целей можно купить за деньги</b>. Просто подумай, это всё просто деньги. Оставшиеся 10%, возможно, и нельзя купить, но чтобы их достичь, нужно время.</p>
+
+    <p>А <b>свободное время будет тогда, когда будет достаточно денег</b>. Потому что большинство людей тратит большую часть своей жизни на то, чтобы париться по поводу денег. Тебе просто надо зарабатывать в 3 раза больше, и ты сможешь себе это позволить то, о чем ты мечтаешь.</p>
+
+    <p>Поэтому <b>бизнес — это отличный инструмент чтобы стать свободным</b>.</p>
+
+    <p>Ты получишь больше свободы принимать решения, чем заниматься сегодня. Потому что работа — это постоянное ограничение свободы. Твоё время принадлежит кому-то другому. У тебя есть только выходные и отпуск.</p>
+
+    <blockquote class="lead">“Отпуск – это когда тебя отпустили”</blockquote>
+
+    <p>Если тебе не хочется, чтобы тебя «отпускали в отпуск», а хочешь сам управлять своей жизнью. Если тебе хочется путешествовать, смотреть, знакомиться, получать новые впечатления. Значит тебе пора открывать свой бизнес.</p>
+
+    <p class="m-t-lg"><a href="#join-anchor" class="js-scr btn btn-primary btn-lg">Стать свободным</a></p>
+  </div>
+</div>
+
+<div class="block block-bordered block-inverse text-center b-join">
+  <div class="container">
+    <h1 class="m-b-lg">Не просто выберешь, но&nbsp;и&nbsp;запустишь бизнес</h1>
+    <p class="lead">Действуй.</p>
+    <p class="m-t-lg"><a href="#join-anchor" class="js-scr btn btn-default">Оставить заявку на участие</a></p>
+  </div>
+</div>
+
+<p class="text-center">ООО Реальность, +7 921 7618506 Санкт-Петербург, ул. Некрасова 40 ok@nickvorobiov.com <a href="http://soedinennost.com/privacy">Политика конфиденциальности</a></p>

@@ -1,0 +1,24 @@
+baseurl: ""
+url: "http://bpl.nickvorobiov.com"
+markdown: kramdown
+exclude:
+  - node_modules
+  - package.json
+  - README.md
+  - gulpfile.js
+  - deploy
+  - deploy-key.enc
+  - deploy-key
+
+title: "Бизнес по любви"
+description: "Авторский курс Николая Воробьёва по выбору любимого дела и созданию из него прибыльного бизнеса"
+keywords: "бизнес, стартап, тестирование ниши, выбор ниши, предприниматель, запуск"
+author: "Николай Воробьёв"
+
+permalink: /:title/
+
+vk_app_id: 5717273 # bpl.nickvorobiov.com
+yandex_metrika: 40747074 # bpl.nickvorobiov.com
+google_analytics: UA-46456269-26 # bpl.nickvorobiov.com
+facebook_pixel_id: 1064201373633710
+vk_retarget_url: '//vk.com/rtrg?r=bGVoR7ksubYSLab0ad8xEx/n89UzhxODpCrKKD6glQglmcAJsZa*QEYcha4JARzNsq410oZKNHc11zNq*VpleCDEtbpS*owzwIQpRqSlIh4A/3YVxEm6U*u1CDTy2VKsivoDVSIABJlEcC1VxAJ1wAeldVSsLfJu*A6RruclptQ-&pixel_id=1000039266'

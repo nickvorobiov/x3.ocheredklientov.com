@@ -1,0 +1,112 @@
+@import 'bootstrap-variables';
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.b-head {
+  background-image: url(/images/bg2.jpg);
+  background-position: top center;
+  background-size: cover;
+  background-color: #e5f4fb;
+
+  h1 {
+    font-weight: 700;
+    font-size: 42px;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 28px;
+    }
+  }
+}
+
+.b-me {
+  background: #efefef url(../images/b_main.jpg) bottom right no-repeat;
+  background-size: 50%;  
+
+  @media (max-width: $screen-xs-max) {
+    background-size: 100%;
+    padding-bottom: 75%; //240px
+  }
+
+  &__sign {
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    right: 70px;
+    bottom: 45px;
+
+    @media (max-width: 768px) {
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+}
+
+.b-odd {
+  background-color: #efefef;
+}
+
+.b-join {
+  &__button {
+    white-space: normal;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  h1 {
+    font-size: 24px;
+  }
+  .p-x-lg {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.b-enjoy {
+  text-align: center;
+  span {
+    font-size: 60px;
+    text-align: center;
+    display: block;
+  }
+}
+
+.b-love {
+  background-image: url(/images/bg3.jpg);
+  background-position: center;
+  background-size: stretch;
+}
+
+.btn {
+  white-space: normal;
+}
+
+.b-join {
+  background-color: #f5f5f5;
+
+  background-image: url(../images/b_anchor.jpg);
+
+  .text-muted {
+    color: #777;
+  }
+
+  h1 {
+    margin-top: 80px;
+    font-weight: 600;
+  }
+}
+
+#age-timer {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.pricing__table td {
+  text-align: center;
+}
+
+.pricing {
+  display: none;
+}

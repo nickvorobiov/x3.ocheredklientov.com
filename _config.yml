@@ -1,0 +1,24 @@
+baseurl: ""
+url: "http://x3.ocheredklientov.com"
+markdown: kramdown
+exclude:
+  - node_modules
+  - package.json
+  - README.md
+  - gulpfile.js
+  - deploy
+  - deploy-key.enc
+  - deploy-key
+
+title: "Как масштабировать бизнес в 3 раза"
+description: "Бизнес перестал расти? Получи готовый план действий по увеличению продаж на бесплатном вебинаре Николая Воробьёва"
+keywords: "бизнес, стартап, тестирование ниши, выбор ниши, предприниматель, запуск"
+author: "Николай Воробьёв"
+
+permalink: /:title/
+
+#vk_app_id: 0
+yandex_metrika: 40853029 # x3.ocheredklientov.com
+google_analytics: UA-46456269-27 # x3.ocheredklientov.com
+facebook_pixel_id: 1064201373633710
+vk_retarget_url: '//vk.com/rtrg?r=fvY2aB7tAy3FPytf/Xt66GM*XOL0XeoRttgiwBI/kP4oYHXhyq7iN9PGE7qJ818o96eq2B71lbbKkJHVQk27tzIwu5KVZIB5GKpTjzhkw8bTg61uGy4/Ch8rS5xOcC8I5PIJf3w0*4rIce7b1CyfsG/dACOzKuZJQcRNJ4ibLI8-&pixel_id=1000041265'
