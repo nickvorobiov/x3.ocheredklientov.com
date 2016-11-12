@@ -163,8 +163,8 @@ permalink: /
         <div class="well">
           <p class="lead text-center">Регистрация на&nbsp;вебинар {{ page.eventdate }}</p>
           <form method="post" action="https://nickvorobiov.activehosted.com/proc.php" data-toggle="validator">
-            <input type="hidden" name="u" value="5" />
-            <input type="hidden" name="f" value="5" />
+            <input type="hidden" name="u" data-field="list-id" value="5" />
+            <input type="hidden" name="f" data-field="list-id" value="5" />
             <input type="hidden" name="s" />
             <input type="hidden" name="c" value="0" />
             <input type="hidden" name="m" value="0" />
@@ -291,9 +291,11 @@ $(document).ready(function() {
 
     if (occupation == 'Работаю по найму' || income == '0-40') {
       $('input[data-field=trello-list-id]').val('58275f942ec79c43fc0a44ce');
+      $('input[data-field=list-id]').val('13');
       console.log('Нецелевой');
     } else {
       $('input[data-field=trello-list-id]').val('58275f9bae9f6fae3c283dc8');
+      $('input[data-field=list-id]').val('5');
       console.log('Целевой');
     }
   });
